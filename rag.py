@@ -44,7 +44,7 @@ vectorstore = Chroma.from_documents(documents=splits, embedding=embeddings)
 # Step 4: Define a function to call Llama 3 with context
 def ollama_llm(question, context):
     formatted_prompt = f"Question: {question}\n\nContext: {context}"
-    response = ollama.chat(model='llama3', messages=[{'role': 'user', 'content': formatted_prompt}])
+    response = ollama.chat(model='llama3.2:3b', messages=[{'role': 'user', 'content': formatted_prompt}])
     return response['message']['content']
 
 # Step 5: Set up the RAG system
