@@ -25,7 +25,7 @@ services:
 
   rag-ai-app:
     build: .
-    image: ${ECR_REGISTRY}/${ECR_REPOSITORY}:${IMAGE_TAG:latest}
+    image: ${ECR_REGISTRY}/${ECR_REPOSITORY}:${IMAGE_TAG}:latest
     container_name: rag-ai-app
     ports:
       - "7860:7860"
