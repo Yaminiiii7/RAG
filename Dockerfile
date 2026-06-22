@@ -10,7 +10,7 @@ COPY . .
 
 EXPOSE 7860
 
-CMD ["python", "rag.py"]
+CMD ["python", "rag.py"] 
 
 # All-in-one image: Ollama + RAG app in a single container.
 # Equivalent to the docker-compose stack (ollama + ollama-pull + rag-ai-app),

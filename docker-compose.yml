@@ -25,7 +25,7 @@ services:
 
   rag-ai-app:
     build: .
-    image: ${ECR_REGISTRY}/${ECR_REPOSITORY}:${IMAGE_TAG}
+    #image: ${ECR_REGISTRY}/${ECR_REPOSITORY}:${IMAGE_TAG}
     container_name: rag-ai-app-cont
     ports:
       - "7860:7860"
@@ -41,3 +41,8 @@ services:
 
 volumes:
   ollama_data:
+
+
+
+    
+    

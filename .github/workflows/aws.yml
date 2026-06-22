@@ -31,15 +31,10 @@ on:
     branches: [ "main" ]
 
 env:
-  AWS_REGION: us-east-1                  # set this to your preferred AWS region, e.g. us-west-1
-  ECR_REPOSITORY: rag-ai-app           # set this to your Amazon ECR repository name
+  AWS_REGION: us-east-1                        # your AWS region
+  ECR_REPOSITORY: rag-ai-app                   # your Amazon ECR repository name
   IMAGE_TAG: latest
-  ##ECS_SERVICE: MY_ECS_SERVICE                 # set this to your Amazon ECS service name
-  ##ECS_CLUSTER: MY_ECS_CLUSTER                 # set this to your Amazon ECS cluster name
-  #ECS_TASK_DEFINITION: MY_ECS_TASK_DEFINITION # set this to the path to your Amazon ECS task definition
-                              # file, e.g. .aws/task-definition.json
-  #CONTAINER_NAME: MY_CONTAINER_NAME           # set this to the name of the container in the
-                                               # containerDefinitions section of your task definition
+                    # the container in the task def that serves :7860
 
 permissions:
   contents: read
@@ -76,4 +71,5 @@ jobs:
         docker compose push rag-ai-app
         echo "image=$ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG" >> $GITHUB_OUTPUT
 
-   
+    
+
